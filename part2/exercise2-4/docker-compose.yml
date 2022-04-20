@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis
+    ports:
+      - 127.0.0.1:6379:6379
+
+  backend:
+    build: ./example-backend/
+    ports:
+      - 127.0.0.1:8080:8080
+    
+  frontend:
+    build: ./example-frontend
+    ports: 
+      - 127.0.0.1:5000:5000
